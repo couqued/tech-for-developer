@@ -1,1 +1,9 @@
+로컬 파이썬 실행 방법
 
+1. 가상환경 만들기
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+
+2. 실행
+python lambda_function.py
