@@ -2,12 +2,12 @@
 > 현재 디렉토리 기준 git 저장소 생성, 초기화
 > 해당 폴더에 .git 폴더 생성됨
 
+#### git remote add origin <원격저장소URL>
+> 원격 저장소 (Remote Repository) 등록  
+> git remote add origin https://github.com/username/myproject.git
+
 #### git remote -v
 > 현재 로컬저장소에 연결된 원격 저장소 확인
-
-#### git remote add origin <원격저장소URL>
-> 원격 저장소 (Remote Repository) 등록
-> git remote add origin https://github.com/username/myproject.git
 
 #### git remote set-url origin https://github.com/username/new-repo.git
 > 원격 저장소 URL 수정하기
