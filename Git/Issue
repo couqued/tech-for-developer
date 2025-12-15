@@ -1,0 +1,40 @@
+git
+1. 현재 변경 내용을 살리고 계속 작업하고 싶다 → commit 후 pull
+git status              # 어떤 파일이 수정됐는지 확인
+git add .               # 수정된 파일 스테이징
+git commit -m "작업 내용 메시지"
+git pull                # 그다음 원격에서 가져오기(머지 또는 리베이스)
+
+
+2. 지금 변경은 잠깐 두고, pull부터 받고 싶다 → stash 사용
+git stash push -m "임시 작업 저장"  # 현재 변경사항을 임시 저장소에 숨김
+git pull                          # 깨끗한 워킹 디렉토리에서 pull 수행
+git stash pop                     # 숨겨놨던 변경을 다시 꺼내서 적용
+
+지금 바꾼 건 나중에 정리하고, 일단 원격 코드부터 최신으로 맞추자” 할 때 쓰는 패턴.
+
+
+3. 로컬에서 바꾼 거 사용안하고 pull
+
+정말로 지금 로컬 변경 전부 필요 없을 때만 사용:
+
+git reset --hard HEAD   # 추적 중인 파일 변경 전부 버림
+git clean -fd           # git이 모르는 새 파일/폴더도 삭제(옵션)
+git pull
+이건 되돌릴 수 없으니까, 정말 필요 없을 때만 사용
+
+
+
+
+
+
+error: Your local changes to the following files would be overwritten by merge:
+Please commit your changes or stash them before you merge
+Aborting
+로컬 디렉토리에 수정된 파일이 있는데
+git pull을 하면 원격 변경 내용이 그 파일들을 덮어써버릴 상황이라서
+Git에서 pull을 막음
+
+git reset --hard HEAD   # 추적 중인 파일 변경 전부 버림
+git clean
+git pull
